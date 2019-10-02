@@ -1,0 +1,11 @@
+#containter {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+#container div {
+  height: 100px;
+  font-size: 20px;
+  font-family: Arial;
+  text-align: center;
+}
