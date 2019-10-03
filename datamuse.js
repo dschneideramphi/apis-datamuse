@@ -2,6 +2,16 @@
 
 let colors = ["red", "green", "orange", "yellow", "magenta", "cyan", "lime", "blue"];
 let containerElt = document.querySelector("#container");
+let result;
+
+
+let mlSearchElt = document.querySelector("#mlSearch");
+mlSearchElt.addEventListener("click", e => {
+  getWord("banana");
+});
+
+
+
 
 
 //Example Function: gets words related to whatever the user types
@@ -28,3 +38,5 @@ const updateScreen = (result) => {
 
 //Your Task: create 2 more async functions that use the datamuse API
 //Hint: you should only need to change the text inside the fetch command
+
+
