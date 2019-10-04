@@ -12,6 +12,7 @@ Close out of any files we were working on previously. In your Cloud9 environment
 
 Then use this command to copy down the new files Schneider has made
 
+`git stash`
 `git pull`
 
 Re-open `datamuse.html` and `datamuse.js` and verify they've been updated
