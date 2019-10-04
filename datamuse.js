@@ -7,16 +7,30 @@ let result;
 
 let mlSearchElt = document.querySelector("#mlSearch");
 mlSearchElt.addEventListener("click", e => {
-  getWord("banana");
+  let userWord = prompt("Enter a word");
+  getWord(userWord);
 });
 
+let rhySearchElt = document.querySelector("#rhySearch");
+rhySearchElt.addEventListener("click", e => {
+  let userWord = prompt("Enter a word");
+  getRhyme(userWord);
+})
 
-
+async function getRhyme(word) {
+  result = await fetch(`https://api.datamuse.com/words?rel_rhy=${word}`, {mode: 'cors'})
+          .then(res => res.json()
+            .then((result) => {
+                    updateScreen(result)
+                }
+            )
+          );
+}
 
 
 //Example Function: gets words related to whatever the user types
 async function getWord(word) {
-  result = await fetch(`https://api.datamuse.com/words?ml=${word}`)
+  result = await fetch(`https://api.datamuse.com/words?ml=${word}`, {mode: 'cors'})
           .then(res => res.json()
             .then((result) => {
                     updateScreen(result)
